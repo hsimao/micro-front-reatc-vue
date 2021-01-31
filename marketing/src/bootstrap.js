@@ -4,8 +4,12 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 import App from "./App";
 
 // 創建 mount function
-const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  const history =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath]
+    });
 
   if (onNavigate) {
     history.listen(onNavigate);
@@ -18,7 +22,7 @@ const mount = (el, { onNavigate, defaultHistory }) => {
       // 預防無限循環
       const { pathname } = history.location;
       if (pathname !== nextPathname) {
-        console.log("from  container", nextPathname);
+        console.log("route from container to marketing", nextPathname);
         history.push(nextPathname);
       }
     }

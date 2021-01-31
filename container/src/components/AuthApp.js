@@ -1,4 +1,4 @@
-import { mount } from "marketing/MarketingApp";
+import { mount } from "auth/AuthApp";
 import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export default () => {
         // 預防無限循環
         const { pathname } = history.location;
         if (pathname !== nextPathname) {
-          console.log("route from marketing to container", nextPathname);
+          console.log("route from auth to container", nextPathname);
           history.push(nextPathname);
         }
       }
