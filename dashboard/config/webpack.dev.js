@@ -11,10 +11,10 @@ const devConfig = {
   },
   devServer: {
     port: 8083,
-    historyApiFallback: true
-    // headers: {
-    //   "Access-Control-Allow-Origin": "*"
-    // }
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   plugins: [
     new ModuleFederationPlugin({

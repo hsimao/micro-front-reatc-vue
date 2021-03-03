@@ -3,7 +3,7 @@ const { VueLoaderPlugin } = require("vue-loader");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "[name].[contenthash].js"
+    filename: "[name].[contenthash].jss"
   },
   resolve: {
     extensions: [".js", ".vue"]
